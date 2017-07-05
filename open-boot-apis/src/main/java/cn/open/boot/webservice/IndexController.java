@@ -4,14 +4,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * api index page
+ * <p>
  * Created by lenovo on 2017/7/1.
  */
 @RestController
-public class HelloController {
+@RequestMapping("/")
+public class IndexController {
 
-    @RequestMapping("/hello")
+    @RequestMapping("/")
     public String index() {
-        return "Hello World";
+        return "Open boot api v1.0.0";
     }
 
 }
