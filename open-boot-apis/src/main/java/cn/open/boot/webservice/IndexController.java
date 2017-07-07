@@ -3,6 +3,8 @@ package cn.open.boot.webservice;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Date;
+
 /**
  * api index page
  * <p>
@@ -17,4 +19,9 @@ public class IndexController {
         return "Open boot api v1.0.0";
     }
 
+    @RequestMapping("/info")
+    public String info() {
+        System.out.println("Time : " + new Date());
+        return "Open boot api v1.0.0";
+    }
 }

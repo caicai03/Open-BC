@@ -1,7 +1,8 @@
 package cn.open.boot;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ImportResource;
 
 /**
@@ -9,12 +10,13 @@ import org.springframework.context.annotation.ImportResource;
  * <p>
  * Created by qianlu on 2017/7/1.
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 @ImportResource({"classpath:*.xml"})
-public class OpenBootApplication {
+public class OpenBootApisApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(OpenBootApplication.class, args);
+        new SpringApplicationBuilder(OpenBootApisApplication.class).web(true).run(args);
     }
 
 }

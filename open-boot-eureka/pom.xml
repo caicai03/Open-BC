@@ -11,9 +11,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.open.boot</groupId>
-    <artifactId>open-boot-apis</artifactId>
+    <artifactId>open-boot-eureka</artifactId>
+    <name>Open :: Boot :: Eureka :: Server</name>
     <version>1.0.0-SNAPSHOT</version>
-    <name>Open :: Boot :: Apis</name>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -24,38 +24,13 @@
         </dependency>
 
         <dependency>
-            <groupId>cn.open.boot</groupId>
-            <artifactId>open-boot-mongo-dataservice</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <optional>true</optional>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongo-java-driver</artifactId>
-            <optional>true</optional>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mongodb.morphia</groupId>
-            <artifactId>morphia</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
 
     </dependencies>
@@ -73,22 +48,7 @@
     </dependencyManagement>
 
     <build>
-        <resources>
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-            <resource>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.*</include>
-                </includes>
-            </resource>
-        </resources>
         <plugins>
-            <!-- eclipse plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>
