@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * boot start
+ * apis start
  * <p>
  * Created by qianlu on 2017/7/1.
  */
