@@ -2,6 +2,7 @@ package cn.open.boot.webservice;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +24,6 @@ public class IndexController {
     @Autowired
     private DiscoveryClient client;
 
-
     @RequestMapping("/")
     public String index() {
         return "Open boot api v1.0.0";
@@ -39,7 +39,7 @@ public class IndexController {
         return "Open boot api v1.0.0";
     }
 
-    @RequestMapping(value = "/add" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String add(@RequestParam Integer a, @RequestParam Integer b) {
         ServiceInstance instance = client.getLocalServiceInstance();
         Integer r = a + b;

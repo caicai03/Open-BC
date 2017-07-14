@@ -3,7 +3,11 @@ package cn.open.boot.dataservice.mongo;
 import com.mongodb.MongoClient;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.AbstractFactoryBean;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,13 +25,20 @@ import java.util.List;
  */
 public class DatastoreFactory extends AbstractFactoryBean<Datastore> {
 
-    private Morphia morphia;
     private MongoClient mongoClient;
+
     private String dbName;
+
     private List<String> packages = new ArrayList<String>();
 
     private boolean ensureIndexes = true;
     private boolean ensureCaps = true;
+
+    private static Morphia morphia;
+
+    static {
+        morphia = new Morphia();
+    }
 
     @Override
     protected Datastore createInstance() throws Exception {
@@ -64,9 +75,6 @@ public class DatastoreFactory extends AbstractFactoryBean<Datastore> {
         }
     }
 
-    public void setMorphia(Morphia morphia) {
-        this.morphia = morphia;
-    }
 
     public void setMongoClient(MongoClient mongoClient) {
         this.mongoClient = mongoClient;

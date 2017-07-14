@@ -6,6 +6,7 @@ import cn.open.boot.utils.Identities;
 import cn.open.boot.web.StandardManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
@@ -14,6 +15,7 @@ import java.util.Date;
  * <p>
  * Created by qianlu on 2017/7/5.
  */
+@Service
 public class UserManager extends StandardManager<User, String> {
 
     @Autowired

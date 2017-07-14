@@ -2,11 +2,17 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          version="2.5">
-    <display-name>shi-hui</display-name>
+    <display-name>open-boot-apis</display-name>
 
     <context-param>
         <param-name>spring.profiles.default</param-name>
         <param-value>production</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:/*.xml
+        </param-value>
     </context-param>
 
     <session-config>

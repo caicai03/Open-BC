@@ -4,11 +4,16 @@ import com.mongodb.MongoClient;
 import com.mongodb.MongoClientOptions;
 import com.mongodb.ReadPreference;
 import com.mongodb.ServerAddress;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Configuration
 public class MongoClientFactory {
 
     private String host;
@@ -19,6 +24,7 @@ public class MongoClientFactory {
      * <p/>
      * 语法: host1:port1,host2:port2...hostX:portX
      */
+    @Value("${mongo.connectStr}")
     private String connectStr;
 
     private String description;
@@ -42,6 +48,7 @@ public class MongoClientFactory {
         this.port = port;
     }
 
+    @Bean(name = "mongoClient")
     public MongoClient create() throws UnknownHostException {
         MongoClientOptions.Builder builder = MongoClientOptions.builder();
         builder

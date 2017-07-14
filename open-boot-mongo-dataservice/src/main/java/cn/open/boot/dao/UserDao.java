@@ -6,20 +6,24 @@ import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.query.Query;
 import org.mongodb.morphia.query.UpdateOperations;
 import org.mongodb.morphia.query.UpdateResults;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  * Mongo user dao
  * <p>
  * Created by qianlu on 2017/7/5.
  */
+@Component
 public class UserDao extends AbstractDAO<User, String> {
 
+    @Autowired
     public UserDao(Datastore ds) {
         super(ds);
     }
 
     /**
-     * find use by username
+     * find user by username
      *
      * @param username
      * @return
